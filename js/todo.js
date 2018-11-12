@@ -25,11 +25,18 @@ $(document)
 
         function addToDo() {
             var input = $(".input-text").val();
-            alert(input);
             $("ol").append(`<li id="` + generateUUID() + `" class="">
             <input name="done-todo" type="checkbox" class="done-todo"> ` + input + ` </li>`);
         }
 
         $('#button').click(addToDo);
+
+        $('.done-todo').change(function() {
+            if ($(this).parent().hasClass("checked")) {
+                $(this).parent().attr("class", "");
+            } else {
+                $(this).parent().attr("class", "checked");
+            }
+        });
 
     });
