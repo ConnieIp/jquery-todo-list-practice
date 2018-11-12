@@ -39,4 +39,13 @@ $(document)
             }
         });
 
+        $('li').dblclick(function() {
+            $(this).attr('contentEditable', 'true');
+            $(this).keypress(function(event) {
+                if (event.which == '13') {
+                    $(this).attr('contenteditable', 'false');
+                }
+            })
+        });
+
     });
