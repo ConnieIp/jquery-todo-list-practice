@@ -38,5 +38,5 @@ $(document)
                 $(this).parent().attr("class", "checked");
             }
         });
-        //
+
     });
