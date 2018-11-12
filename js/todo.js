@@ -48,4 +48,18 @@ $(document)
             })
         });
 
+        $("[href='#']").click(function() {
+            $("[href='#']").attr("class", "");
+            $(this).attr("class", "selected");
+            if ($(this).attr("data-filter") == "all") {
+                $('ol li').show();
+            } else if ($(this).attr("data-filter") == "active") {
+                $('ol li').show();
+                $('ol li.checked').hide();
+            } else if ($(this).attr("data-filter") == "complete") {
+                $('ol li').hide();
+                $('ol li.checked').show();
+            }
+        });
+
     });
